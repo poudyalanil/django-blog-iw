@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+
+{%block head%}
+
+<title>
+    Blog|Homepage
+</title>
+{%endblock%}
+
+{%block content%}
+<div class="row" "></div>
+{%for blog in blogs%}
+
+    <div class="col-sm-6"style="padding: 1em;>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{blog.title}}</h5>
+          
+          <span style="color: grey;">{{blog.author}}</span>
+          <p class="card-text">
+              {{blog.content|slice:":150"}}
+          </p>
+          <a href="/{{blog.id}}" class="btn btn-primary">Read More >></a>
+        </div>
+      </div>
+    </div>
+    
+{%endfor%}
+</div>
+{%endblock%}
+

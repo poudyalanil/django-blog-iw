@@ -1,0 +1,34 @@
+{%extends 'base.html'%}
+{%block head%}
+<title>
+Blog| {{blog.title}}
+</title>
+{%endblock%}
+
+{%block content%}
+<h3>
+    {{blog.title}}
+</h3>
+
+<span>
+    {{blog.author}}
+    <br>
+    Created Date: {{blog.created_date}}
+<br>
+
+
+{% if blog.created_date != blog.updated_date%}
+
+Last Updated: {{blog.updated_date}}    
+
+{% endif %}
+
+
+
+</span>
+
+<hr>
+<pre style="padding:2.5em">
+{{blog.content}}
+</pre>
+{%endblock%}
